@@ -1,3 +1,9 @@
+.spaceman {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
 .word_container {
   color: red;
   text-align: center;

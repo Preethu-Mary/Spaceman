@@ -1,0 +1,10 @@
+.word_text_box {
+  display: flex;
+  white-space: nowrap;
+  align-items: center;
+  gap: 1rem;
+  margin-top: 2rem;
+}
+.text-box {
+  max-width: 12rem;
+}

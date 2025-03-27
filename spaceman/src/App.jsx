@@ -1,6 +1,7 @@
 
 import './App.css'
 import Spaceman from './components/Spaceman'
+import WordTextBox from './components/WordTextBox'
 function App() {
 
   return (

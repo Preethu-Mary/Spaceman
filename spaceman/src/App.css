@@ -1,6 +1,17 @@
 :root {
   margin: 3rem 10rem;
   display: flex;
+  justify-content: center;
+}
+
+.body {
+  justify-content: center;
+}
+
+.App {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
 }
 
 .title {
