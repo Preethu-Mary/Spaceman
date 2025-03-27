@@ -1,3 +1,9 @@
 :root {
   margin: 3rem 10rem;
+  display: flex;
+}
+
+.title {
+  text-align: center;
+  margin-bottom: 2rem;
 }

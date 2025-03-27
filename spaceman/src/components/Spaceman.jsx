@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import Man from '../components/Man'
 import "../styles/spaceman.css"
 import Keyboard from "./Keyboard";
 
@@ -6,16 +7,20 @@ import Keyboard from "./Keyboard";
 const Spaceman = () => {
 
     const words = ["Apple", "Mango", "Orange"];
+
+    const [colors, setColors] = useState(Array(7).fill("#D3D3D3"));
     const [word, setWord] = useState("");
     const [attempts, setAttempts] = useState(7);
     const [guessed, setGuessed] = useState([])
+    const [wrongGuessCount, setWrongGuessCount] = useState(0);
+
     const wordSet = new Set(word)
-    let wrongGuessCount = 0
 
     const randomWord = () => {
         const word = words[Math.floor(Math.random() * words.length)].toUpperCase();
         setWord(word);
         setGuessed(new Array(word.length).fill("_"));
+        setColors(Array(7).fill("#D3D3D3"));
     }
 
     const reset = () => {
@@ -33,9 +38,14 @@ const Spaceman = () => {
             }
             setGuessed(newGuessed);
         } else {
-            wrongGuessCount = wrongGuessCount + 1
+            setColors((prevColors) => {
+                const newColors = [...prevColors];
+                newColors[wrongGuessCount] = "black";
+                return newColors;
+            });
+
+            setWrongGuessCount((prev) => prev + 1);
         }
-        console.log("Letter clicked: ", letter);
         setAttempts((prev) => (prev) - 1)
     };
 
@@ -55,6 +65,7 @@ const Spaceman = () => {
 
     return (
         <div>
+            <Man colors={colors} />
             <h1 className="word_container">{guessed.join(" ")}</h1>
             <Keyboard onGuessLetter={handleGuessLetter} />
         </div>
