@@ -17,9 +17,9 @@ const WordTextBox = ({ onGuessWord }) => {
 
     return (
         <div className="word_text_box">
-            <p>Guess the word fully: </p>
+            <p>Guess the whole word : </p>
             <div className="input-group mb-3">
-                <input type="text" className="form-control text-box" placeholder="Type word" value={inputValue} onChange={handleInputChange} />
+                <input type="text" className="form-control text-box" placeholder="Type word" value={inputValue} onChange={handleInputChange} onKeyDown={(e) => e.key === "Enter" && handleSubmit()} />
                 <div className="input-group-append">
                     <button className="btn btn-outline-secondary" type="button" onClick={handleSubmit}>Go!</button>
                 </div>

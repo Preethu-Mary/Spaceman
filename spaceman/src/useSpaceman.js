@@ -1,30 +1,40 @@
 import { useState, useEffect } from "react";
-import { ToastContainer, toast } from "react-toastify";
+import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
 const words = ["Apple", "Mango", "Orange"];
 
 const useSpaceman = () => {
-  const [colors, setColors] = useState(Array(7).fill("#D3D3D3"));
   const [word, setWord] = useState("");
   const [attempts, setAttempts] = useState(7);
   const [usedLetters, setUsedLetters] = useState(new Set());
-  const [guessed, setGuessed] = useState(Array(7).fill(" "));
+  const [guessedWord, setguessedWord] = useState(Array(7).fill(" "));
   const [wrongGuessCount, setWrongGuessCount] = useState(0);
+  const [strokeColors, setstrokeColors] = useState(Array(7).fill("#D3D3D3"));
   const [gameOver, setGameOver] = useState(false);
-
   const wordSet = new Set(word);
 
-  const randomWord = () => {
+  const reset = () => {
     const selectedWord =
       words[Math.floor(Math.random() * words.length)].toUpperCase();
     setWord(selectedWord);
-    setGuessed(new Array(selectedWord.length).fill("_"));
-    setColors(Array(7).fill("#D3D3D3"));
+    setguessedWord(new Array(selectedWord.length).fill("_"));
+    setstrokeColors(Array(7).fill("#D3D3D3"));
     setUsedLetters(new Set());
     setAttempts(7);
     setWrongGuessCount(0);
     setGameOver(false);
+  };
+
+  const handleWrongGuess = () => {
+    setstrokeColors((prevstrokeColors) => {
+      const newstrokeColors = [...prevstrokeColors];
+      newstrokeColors[wrongGuessCount] = "black";
+      return newstrokeColors;
+    });
+
+    setWrongGuessCount((prev) => prev + 1);
+    setAttempts((prev) => prev - 1);
   };
 
   const handleGuessLetter = (letter) => {
@@ -33,52 +43,38 @@ const useSpaceman = () => {
     setUsedLetters((prevUsed) => new Set(prevUsed).add(letter));
 
     if (wordSet.has(letter)) {
-      setGuessed((prevGuessed) =>
-        prevGuessed.map((char, i) => (word[i] === letter ? letter : char))
+      setguessedWord((prevguessedWord) =>
+        prevguessedWord.map((char, i) => (word[i] === letter ? letter : char))
       );
     } else {
-      setColors((prevColors) => {
-        const newColors = [...prevColors];
-        newColors[wrongGuessCount] = "black";
-        return newColors;
-      });
-
-      setWrongGuessCount((prev) => prev + 1);
-      setAttempts((prev) => prev - 1);
+      handleWrongGuess();
     }
   };
 
   const handleGuessWord = (input) => {
     if (input === word) {
-      setGuessed(input.split(""));
+      setguessedWord(input.split(""));
     } else {
-      setColors((prevColors) => {
-        const newColors = [...prevColors];
-        newColors[wrongGuessCount] = "black";
-        return newColors;
-      });
-
-      setWrongGuessCount((prev) => prev + 1);
-      setAttempts((prev) => prev - 1);
+      handleWrongGuess();
     }
   };
 
   useEffect(() => {
-    if (guessed.join("") === word) {
+    if (guessedWord.join("") === word) {
       toast.success("Congratulations, You Won!", {
         onClose: () => {
-          randomWord(); // Call function after toast disappears
+          reset(); // Call function after toast disappears
         },
         autoClose: 3000,
       });
     }
-  }, [guessed, word]);
+  }, [guessedWord, word]);
 
   useEffect(() => {
     if (attempts === 0) {
       toast.success("Better luck next time!", {
         onClose: () => {
-          randomWord();
+          reset();
         },
         autoClose: 3000,
       });
@@ -86,12 +82,12 @@ const useSpaceman = () => {
     }
   }, [attempts]);
 
-  useEffect(randomWord, []);
+  useEffect(reset, []);
 
   return {
     word,
-    colors,
-    guessed,
+    strokeColors,
+    guessedWord,
     usedLetters,
     attempts,
     handleGuessLetter,
