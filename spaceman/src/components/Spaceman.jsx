@@ -11,6 +11,7 @@ const Spaceman = () => {
     const [colors, setColors] = useState(Array(7).fill("#D3D3D3"));
     const [word, setWord] = useState("");
     const [attempts, setAttempts] = useState(7);
+    const [usedLetters, setUsedLetters] = useState(new Set());
     const [guessed, setGuessed] = useState([])
     const [wrongGuessCount, setWrongGuessCount] = useState(0);
 
@@ -28,6 +29,9 @@ const Spaceman = () => {
     }
 
     const handleGuessLetter = (letter) => {
+        if (usedLetters.has(letter)) return; // Prevent duplicate clicks
+
+        setUsedLetters((prevUsed) => new Set(prevUsed).add(letter));
         if (wordSet.has(letter)) {
             let newGuessed = [...guessed];
 
@@ -67,7 +71,7 @@ const Spaceman = () => {
         <div>
             <Man colors={colors} />
             <h1 className="word_container">{guessed.join(" ")}</h1>
-            <Keyboard onGuessLetter={handleGuessLetter} />
+            <Keyboard onGuessLetter={handleGuessLetter} usedLetters={usedLetters} />
         </div>
 
     )
