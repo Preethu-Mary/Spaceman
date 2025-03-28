@@ -31,5 +31,5 @@ Make sure you have the following installed on your machine:
 Clone this repository to your local machine using Git:
 
 ```bash
-git clone https://github.com/yourusername/spaceman.git
+git clone https://github.com/Preethu-Mary/Spaceman.git
 ```
