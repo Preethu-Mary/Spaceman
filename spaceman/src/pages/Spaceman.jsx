@@ -14,13 +14,14 @@ const Spaceman = () => {
             <div className="spaceman__upper">
                 <div className="spaceman__word">
                     <h1 className="spaceman__word__title animate__animated animate__pulse">Guess the word,<br /> Rescue the SpaceMan!</h1>
+                    {/* Display the current guessed word with blanks for unguessed letters */}
                     <h1 className="spaceman__word__container">{guessedWord.join(" ")}</h1>
                 </div>
                 {/* Animation component showing the spaceman's state and flying saucer's state*/}
-                <Animation strokeColors={strokeColors} className1={attempts === 0 ? "animate__animated animate__fadeOutUp" : ""} className2={guessedWord.join("") === word && attempts > 0 ? "animate__animated animate__hinge" : ""} />
+                <Animation strokeColors={strokeColors} spaceman={attempts === 0 ? "animate__animated animate__fadeOutUp" : ""} saucer={guessedWord.join("") === word && attempts > 0 ? "animate__animated animate__hinge" : ""} />
             </div>
             {gameOver ? (
-                <h5 className="spaceman__message">Better luck next time!</h5>
+                <h5 className="spaceman__message">The answer was "{word}". <br /> Better luck next time!</h5>
             ) : (
                 <>
                     {/* Keyboard component for letter guesses */}
@@ -28,10 +29,11 @@ const Spaceman = () => {
                     {/* WordTextBox component for full word guesses */}
                     <WordTextBox onGuessWord={handleGuessWord} />
                 </>
-            )}
+            )
+            }
             {/* ToastContainer to show toast notifications (e.g., success or error messages) */}
             <ToastContainer />
-        </div>
+        </div >
     );
 };
 

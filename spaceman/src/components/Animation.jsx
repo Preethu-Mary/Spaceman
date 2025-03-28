@@ -1,12 +1,14 @@
 import "../styles/Animation.css"
 import alien from "../assets/alien-trans.png"
 
-
-const Animation = ({ strokeColors, className1, className2 }) => {
+// Animation component that renders an alien character and a spaceman
+const Animation = ({ strokeColors, spaceman, saucer }) => {
     return (
         < div className="animation" >
-            <img src={alien} alt="Alien" className={`alien ${className2}`} />
-            <svg width="100" height="150" className={className1}>
+            <img src={alien} alt="Alien" className={`alien ${saucer}`} />
+
+            {/* SVG graphic representing the spaceman */}
+            <svg width="100" height="150" className={spaceman}>
                 {/* Head */}
                 <circle cx="50" cy="20" r="15" stroke={strokeColors[0]} strokeWidth="5" fill="none" />
 
