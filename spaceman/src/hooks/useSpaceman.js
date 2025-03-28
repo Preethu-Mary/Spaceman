@@ -8,9 +8,9 @@ const useSpaceman = () => {
   const [word, setWord] = useState("");
   const [attempts, setAttempts] = useState(7);
   const [usedLetters, setUsedLetters] = useState(new Set());
-  const [guessedWord, setguessedWord] = useState(Array(7).fill(" "));
+  const [guessedWord, setguessedWord] = useState([" "]);
   const [wrongGuessCount, setWrongGuessCount] = useState(0);
-  const [strokeColors, setstrokeColors] = useState(Array(7).fill("black"));
+  const [strokeColors, setstrokeColors] = useState([]);
   const [gameOver, setGameOver] = useState(false);
   const wordSet = new Set(word);
 
@@ -20,7 +20,7 @@ const useSpaceman = () => {
       words[Math.floor(Math.random() * words.length)].toUpperCase();
     setWord(selectedWord);
     setguessedWord(new Array(selectedWord.length).fill("_"));
-    setstrokeColors(Array(7).fill("#181a18"));
+    setstrokeColors(Array(7).fill("#D3D3D3"));
     setUsedLetters(new Set());
     setAttempts(7);
     setWrongGuessCount(0);
@@ -105,10 +105,13 @@ const useSpaceman = () => {
     strokeColors, // The colors of the stroke for spaceman drawing
     guessedWord, // The current guessed word
     usedLetters, // Set of used letters
-    attempts, // The remaining number of attempts
+    attempts, // The remaining number of attempts,
+    wrongGuessCount, //The number of wrong guesses
     handleGuessLetter, // Function to handle letter guesses
     handleGuessWord, // Function to handle full word guesses
     gameOver, // Flag indicating whether the game is over
+    reset, //Retturning reset function for testing purposes
+    setWord, //Retturning setWord function for testing purposes
   };
 };
 
