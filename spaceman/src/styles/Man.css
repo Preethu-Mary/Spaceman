@@ -1,4 +1,10 @@
 .man {
   display: flex;
+  flex-direction: column;
+  align-items: center;
   justify-content: center;
+}
+
+.alien {
+  height: 15rem;
 }

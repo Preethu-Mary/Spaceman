@@ -1,19 +1,21 @@
 import "../styles/Man.css"
+import alien from "../assets/alien-trans.png"
 
 
-const Man = ({ strokeColors }) => {
+const Man = ({ strokeColors, className1, className2 }) => {
     return (
         < div className="man" >
-            <svg width="100" height="150">
+            <img src={alien} alt="Alien" className={`alien ${className2}`} />
+            <svg width="100" height="150" className={className1}>
                 {/* Head */}
                 <circle cx="50" cy="20" r="15" stroke={strokeColors[0]} strokeWidth="5" fill="none" />
 
                 {/* Eyes */}
-                <circle cx="45" cy="17" r="2" fill={"black"} />
-                <circle cx="55" cy="17" r="2" fill={"black"} />
+                <circle cx="45" cy="17" r="2" fill={"white"} />
+                <circle cx="55" cy="17" r="2" fill={"white"} />
 
                 {/* Neutral Mouth */}
-                <line x1="45" y1="25" x2="55" y2="25" stroke={"black"} strokeWidth="2" />
+                <line x1="45" y1="25" x2="55" y2="25" stroke={"white"} strokeWidth="2" />
 
                 {/* Upper Body */}
                 <line x1="50" y1="35" x2="50" y2="60" stroke={strokeColors[1]} strokeWidth="5" />

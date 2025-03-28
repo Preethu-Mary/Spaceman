@@ -11,3 +11,27 @@
   margin-bottom: 3rem;
   font-size: 4rem;
 }
+
+.manAndWord {
+  display: flex;
+  align-items: end;
+  width: 100%;
+  justify-content: space-evenly;
+}
+
+.titleAndWord {
+  display: flex;
+  flex-direction: column;
+  gap: 5rem;
+}
+
+.title {
+  color: white;
+}
+.animate__pulse {
+  animation-iteration-count: infinite;
+}
+
+.game-over-message {
+  color: white;
+}

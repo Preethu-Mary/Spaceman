@@ -29,7 +29,7 @@ const useSpaceman = () => {
   const handleWrongGuess = () => {
     setstrokeColors((prevstrokeColors) => {
       const newstrokeColors = [...prevstrokeColors];
-      newstrokeColors[wrongGuessCount] = "black";
+      newstrokeColors[wrongGuessCount] = "red";
       return newstrokeColors;
     });
 
