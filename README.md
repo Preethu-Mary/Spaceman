@@ -13,9 +13,9 @@ correct positions (along with previously guessed letters.)
 - If the suggested letter does not occur in the word, the computer draws the next stage of
 a spacesuited stick figure as a tally mark.
 - The game is over when:
--  a. WIN: The guessing player completes the word, or guesses the whole word
+  a. WIN: The guessing player completes the word, or guesses the whole word
 correctly
--  b. LOSE: The computer completes the diagram.
+  b. LOSE: The computer completes the diagram.
 
 
 ## Technologies Used
