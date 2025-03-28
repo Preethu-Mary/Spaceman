@@ -38,7 +38,7 @@ const useSpaceman = () => {
   };
 
   const handleGuessLetter = (letter) => {
-    if (usedLetters.has(letter)) return; // Prevent duplicate clicks
+    if (usedLetters.has(letter)) return;
 
     setUsedLetters((prevUsed) => new Set(prevUsed).add(letter));
 
@@ -60,10 +60,10 @@ const useSpaceman = () => {
   };
 
   useEffect(() => {
-    if (guessedWord.join("") === word) {
+    if (guessedWord.join("") === word && attempts > 0) {
       toast.success("Congratulations, You Won!", {
         onClose: () => {
-          reset(); // Call function after toast disappears
+          reset();
         },
         autoClose: 3000,
       });
@@ -72,7 +72,8 @@ const useSpaceman = () => {
 
   useEffect(() => {
     if (attempts === 0) {
-      toast.error("Better luck next time!", {
+      setguessedWord(word.split(""));
+      toast.error("Game Over!", {
         onClose: () => {
           reset();
         },

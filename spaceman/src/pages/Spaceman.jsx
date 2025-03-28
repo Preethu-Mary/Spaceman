@@ -15,10 +15,10 @@ const Spaceman = () => {
                     <h1 className="spaceman__word__title animate__animated animate__pulse">Guess the word,<br /> Rescue the SpaceMan!</h1>
                     <h1 className="spaceman__word__container">{guessedWord.join(" ")}</h1>
                 </div>
-                <Animation strokeColors={strokeColors} className1={attempts === 0 ? "animate__animated animate__fadeOutUp" : ""} className2={guessedWord.join("") === word ? "animate__animated animate__hinge" : ""} />
+                <Animation strokeColors={strokeColors} className1={attempts === 0 ? "animate__animated animate__fadeOutUp" : ""} className2={guessedWord.join("") === word && attempts > 0 ? "animate__animated animate__hinge" : ""} />
             </div>
             {gameOver ? (
-                <h5 className="spaceman__message">Game Over!  The answer was {word}.</h5>
+                <h5 className="spaceman__message">Better luck next time!</h5>
             ) : (
                 <>
                     <Keyboard onGuessLetter={handleGuessLetter} usedLetters={usedLetters} />
