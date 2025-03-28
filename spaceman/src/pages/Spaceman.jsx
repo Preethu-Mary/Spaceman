@@ -25,6 +25,7 @@ const Spaceman = () => {
                     <WordTextBox onGuessWord={handleGuessWord} />
                 </>
             )}
+
             <ToastContainer />
         </div>
     );
