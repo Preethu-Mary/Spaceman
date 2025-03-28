@@ -72,7 +72,7 @@ const useSpaceman = () => {
 
   useEffect(() => {
     if (attempts === 0) {
-      toast.success("Better luck next time!", {
+      toast.error("Better luck next time!", {
         onClose: () => {
           reset();
         },
