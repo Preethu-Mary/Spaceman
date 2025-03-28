@@ -20,7 +20,7 @@ const useSpaceman = () => {
       words[Math.floor(Math.random() * words.length)].toUpperCase();
     setWord(selectedWord);
     setguessedWord(new Array(selectedWord.length).fill("_"));
-    setstrokeColors(Array(7).fill("#D3D3D3"));
+    setstrokeColors(Array(7).fill("#181a18"));
     setUsedLetters(new Set());
     setAttempts(7);
     setWrongGuessCount(0);
