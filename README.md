@@ -1,6 +1,6 @@
 # Spaceman Game
 
-The Spaceman Game is a React-based implementation of the classic Hangman game. The objective is to guess a hidden word one letter at a time while keeping track of your wrong guesses. The game ends when the word is guessed correctly or when the number of allowed wrong guesses (7) is exceeded. This version uses animations and messaging to enhance the user experience.
+The Spaceman Game is a React-based implementation of the classic Hangman game. The objective is to guess a hidden word one letter at a time while keeping track of your wrong guesses. The game ends when the word is guessed correctly or when the number of allowed wrong guesses (7) is exceeded. This version uses animations to enhance the user experience.
 
 ## Features
 
