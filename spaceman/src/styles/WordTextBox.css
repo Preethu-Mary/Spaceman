@@ -1,4 +1,4 @@
-.word_text_box {
+.word {
   display: flex;
   white-space: nowrap;
   align-items: center;
@@ -6,6 +6,6 @@
   margin-top: 2rem;
   color: white;
 }
-.text-box {
+.word__text-box {
   max-width: 12rem;
 }

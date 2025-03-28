@@ -1,6 +1,6 @@
 
 import './App.css'
-import Spaceman from './components/Spaceman'
+import Spaceman from './pages/Spaceman'
 function App() {
 
   return (

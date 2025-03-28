@@ -1,10 +1,10 @@
-import "../styles/Man.css"
+import "../styles/Animation.css"
 import alien from "../assets/alien-trans.png"
 
 
-const Man = ({ strokeColors, className1, className2 }) => {
+const Animation = ({ strokeColors, className1, className2 }) => {
     return (
-        < div className="man" >
+        < div className="animation" >
             <img src={alien} alt="Alien" className={`alien ${className2}`} />
             <svg width="100" height="150" className={className1}>
                 {/* Head */}
@@ -36,4 +36,4 @@ const Man = ({ strokeColors, className1, className2 }) => {
     )
 }
 
-export default Man
+export default Animation
