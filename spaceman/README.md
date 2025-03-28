@@ -1,12 +1,35 @@
-# React + Vite
+# Spaceman Game
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+The Spaceman Game is a React-based implementation of the classic Hangman game. The objective is to guess a hidden word one letter at a time while keeping track of your wrong guesses. The game ends when the word is guessed correctly or when the number of allowed wrong guesses (7) is exceeded. This version uses animations and messaging to enhance the user experience.
 
-Currently, two official plugins are available:
+## Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- Guess the word by selecting letters from the on-screen keyboard.
+- Track attempts, with a limited number of wrong guesses.
+- Display messages when the game is won or lost, with sliding animations.
+- Responsive layout and smooth animations using the [animate.css](https://animate.style/) library.
 
-## Expanding the ESLint configuration
+## Technologies Used
 
-If you are developing a production application, we recommend using TypeScript and enable type-aware lint rules. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+- **React** - JavaScript library for building user interfaces.
+- **Vite** - Fast build tool for React applications.
+- **Vitest** - A fast and efficient testing framework for running unit and integration tests.
+- **React Toastify** (optional) - Used for showing toast notifications (if you decide to keep it).
+- **CSS** (with `animate.css`) - Used for animations and styling.
+
+## Setup Instructions
+
+### Prerequisites
+
+Make sure you have the following installed on your machine:
+
+- [Node.js](https://nodejs.org/) (v16 or higher)
+- [npm](https://www.npmjs.com/)
+
+### 1. Clone the repository
+
+Clone this repository to your local machine using Git:
+
+```bash
+git clone https://github.com/yourusername/spaceman.git
+```
