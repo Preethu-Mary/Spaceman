@@ -1,13 +1,22 @@
 # Spaceman Game
 
-The Spaceman Game is a React-based implementation of the classic Hangman game. The objective is to guess a hidden word one letter at a time while keeping track of your wrong guesses. The game ends when the word is guessed correctly or when the number of allowed wrong guesses (7) is exceeded. This version uses animations and messaging to enhance the user experience.
+The Spaceman Game is a React-based implementation of the classic Hangman game. The objective is to guess a hidden word one letter at a time while keeping track of your wrong guesses. The game ends when the word is guessed correctly or when the number of allowed wrong guesses (7) is exceeded. This version uses animations to enhance the user experience.
 
-## Features
+## Rules
 
-- Guess the word by selecting letters from the on-screen keyboard.
-- Track attempts, with a limited number of wrong guesses.
-- Display messages when the game is won or lost, with sliding animations.
-- Responsive layout and smooth animations using the [animate.css](https://animate.style/) library.
+- The computer randomly picks a word from a hardcoded list of fruit names, and the player tries to guess
+  it by suggesting letters or guessing whole word, with up to seven incorrect guesses allowed.
+- The word to guess is represented by a row of underscores, representing each letter of
+  the word.
+- If the player suggests a letter which occurs in the word, the computer prints out all its
+  correct positions (along with previously guessed letters.)
+- If the suggested letter does not occur in the word, the computer draws the next stage of
+  a spacesuited stick figure as a tally mark.
+- The game is over when:
+  - **WIN**:
+    - The guessing player completes the word, or guesses the whole word correctly.
+  - **LOSE**:
+    - The computer completes the diagram.
 
 ## Technologies Used
 

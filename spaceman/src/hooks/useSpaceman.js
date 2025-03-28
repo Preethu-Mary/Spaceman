@@ -9,7 +9,7 @@ const useSpaceman = () => {
   const [usedLetters, setUsedLetters] = useState(new Set());
   const [guessedWord, setguessedWord] = useState(Array(7).fill(" "));
   const [wrongGuessCount, setWrongGuessCount] = useState(0);
-  const [strokeColors, setstrokeColors] = useState(Array(7).fill("#D3D3D3"));
+  const [strokeColors, setstrokeColors] = useState(Array(7).fill("black"));
   const [gameOver, setGameOver] = useState(false);
   const wordSet = new Set(word);
 
@@ -18,7 +18,7 @@ const useSpaceman = () => {
       words[Math.floor(Math.random() * words.length)].toUpperCase();
     setWord(selectedWord);
     setguessedWord(new Array(selectedWord.length).fill("_"));
-    setstrokeColors(Array(7).fill("#D3D3D3"));
+    setstrokeColors(Array(7).fill("#181a18"));
     setUsedLetters(new Set());
     setAttempts(7);
     setWrongGuessCount(0);
@@ -28,7 +28,7 @@ const useSpaceman = () => {
   const handleWrongGuess = () => {
     setstrokeColors((prevstrokeColors) => {
       const newstrokeColors = [...prevstrokeColors];
-      newstrokeColors[wrongGuessCount] = "red";
+      newstrokeColors[wrongGuessCount] = "white";
       return newstrokeColors;
     });
 
