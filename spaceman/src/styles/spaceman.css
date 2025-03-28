@@ -34,6 +34,10 @@
   animation-iteration-count: infinite;
 }
 
+.animate__animated.animate__fadeOutUp {
+  --animate-duration: 2s;
+}
+
 .spaceman__message {
   color: white;
 }

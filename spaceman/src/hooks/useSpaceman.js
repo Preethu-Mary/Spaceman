@@ -1,8 +1,7 @@
 import { useState, useEffect } from "react";
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-
-const words = ["Apple", "Mango", "Orange"];
+import { words } from "../data/words";
 
 const useSpaceman = () => {
   const [word, setWord] = useState("");
