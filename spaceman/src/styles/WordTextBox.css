@@ -6,6 +6,11 @@
   margin-top: 2rem;
   color: white;
 }
+
 .word__text-box {
   max-width: 12rem;
+}
+
+.go-button {
+  color: white;
 }

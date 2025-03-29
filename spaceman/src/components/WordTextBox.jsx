@@ -24,7 +24,7 @@ const WordTextBox = ({ onGuessWord }) => {
             <div className="input-group mb-3">
                 <input type="text" className="form-control word__text-box" placeholder="Type word" value={inputValue} onChange={handleInputChange} onKeyDown={(e) => e.key === "Enter" && handleSubmit()} />
                 <div className="input-group-append">
-                    <button className="btn btn-outline-secondary" type="button" onClick={handleSubmit}>Go!</button>
+                    <button className="btn btn-outline-secondary go-button" type="button" onClick={handleSubmit}>Go!</button>
                 </div>
             </div>
         </div>

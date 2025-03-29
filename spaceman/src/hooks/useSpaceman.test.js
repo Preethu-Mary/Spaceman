@@ -12,7 +12,7 @@ describe("useSpaceman Hook", () => {
     expect(result.current.guessedWord).toEqual(
       Array(result.current.word.length).fill("_")
     );
-    expect(result.current.strokeColors).toEqual(Array(7).fill("#D3D3D3"));
+    expect(result.current.strokeColors).toEqual(Array(7).fill("#181a18"));
     expect(result.current.usedLetters).toEqual(new Set());
     expect(result.current.wrongGuessCount).toBe(0);
     expect(result.current.gameOver).toBe(false);

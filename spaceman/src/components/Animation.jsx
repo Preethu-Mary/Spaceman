@@ -33,7 +33,6 @@ const Animation = ({ strokeColors, spaceman, saucer }) => {
                 <line x1="50" y1="90" x2="30" y2="120" stroke={strokeColors[5]} strokeWidth="5" />
                 <line x1="50" y1="90" x2="70" y2="120" stroke={strokeColors[6]} strokeWidth="5" />
             </svg>
-
         </div >
     )
 }
