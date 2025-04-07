@@ -1,4 +1,5 @@
 {
+  "homepage": "https://preethu-mary.github.io/Spaceman",
   "name": "spaceman",
   "private": true,
   "version": "0.0.0",
@@ -8,9 +9,12 @@
     "build": "vite build",
     "lint": "eslint .",
     "preview": "vite preview",
-    "test": "vitest"
+    "test": "vitest",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
   },
   "dependencies": {
+    "gh-pages": "^6.3.0",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
     "react-toastify": "^11.0.5"
@@ -30,7 +34,5 @@
     "jsdom": "^26.0.0",
     "vite": "^6.2.0",
     "vitest": "^3.0.9"
-  },
-  "homepage": "https://preethu-mary.github.io/Spaceman"
-
+  }
 }
